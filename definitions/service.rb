@@ -9,5 +9,6 @@ define :nginx_unicorn do
     variables ({:name => params[:name]})
   end
 
-  monit_app "nginx", :app_name => params[:name]
+  monit_app "nginx" do
+  end
 end

@@ -4,4 +4,6 @@
 #
 # Copyright (C) 2013 Daniel Nolte 
 
-nginx_unicorn node['app']['name']
+include_recipe "nginx::default"
+
+nginx_unicorn node['app']['id']

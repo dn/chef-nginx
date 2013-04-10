@@ -5,9 +5,11 @@
 # Copyright (C) 2013 Daniel Nolte 
 
 # TODO bootstrap machine with it
+if false
 gem_package "chef" do
   action :install
   version "11.4.0"
+end
 end
 
 apt_repository "nginx" do
