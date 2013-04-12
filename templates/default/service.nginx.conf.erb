@@ -39,6 +39,10 @@ http {
 
     try_files $uri/index.html $uri.html $uri @app;
 
+    proxy_buffer_size 16k;
+    proxy_buffers 8 16k;
+    proxy_busy_buffers_size 32k;
+
     location @app {
       <% if @htpasswd -%>
       auth_basic            "Please speak with a clear voice";
