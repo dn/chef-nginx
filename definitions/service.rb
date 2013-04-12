@@ -9,6 +9,8 @@ define :nginx_unicorn do
   
   if app_config[:htpasswd]
     template "/etc/nginx/htpasswd" do
+      user  "app"
+      group "app"
       source  "htpasswd.erb"
       variables ({:htpasswd => app_config[:htpasswd]})
     end
